@@ -47,7 +47,7 @@ Wenn das hier manche hirnlosen Menschen lesen, wird bestimmt etwas kommen wie:
 
 Spart euch das. Ich und viele andere haben in den letzten Jahren in Linux/BSD-Usergroups und auch 
 in vielen anderen Projekten für Kinder/Jugendliche und Erwachsene solche ähnlichen Systeme 
-aufgesetzt, betrieben und gepflegt. Um Leuten auch PCs, Linus, Internet, Software, Server usw. usw. 
+aufgesetzt, betrieben und gepflegt. Um Leuten auch PCs, Linux, Internet, Software, Server usw. usw. 
 näher zu bringen. Ihr hattete alle mindestens 15 Jahre Zeit auch solche Systeme benutzen zu können. 
 Der Großteil von euch hat sich dafür aber einen Scheiß interessiert. Also einfach mal die Fresse halten. 
 
