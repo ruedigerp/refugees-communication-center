@@ -32,8 +32,10 @@ am nächsten Tag wieder schnell einspielen. Für den Fall das er Daten später n
 
 Diskless PCs oder Diskless Boot und für jeden User einen eigenen Container aus einem einfachen Grund:
 
-    * Jeder erhält ein frisches System ohne irgendwelche Einstellungen und Schadsoftware die ggf. Daten abgreifen kann.
-    * Jeder kann sicher sein das seine Daten: Chatprotokolle, Mailaccounts und -daten, sonstige Daten im Browser usw. 
+    * Jeder erhält ein frisches System ohne irgendwelche Einstellungen und Schadsoftware 
+    die ggf. Daten abgreifen kann.
+    * Jeder kann sicher sein das seine Daten: Chatprotokolle, Mailaccounts und -daten, 
+    sonstige Daten im Browser usw. 
 
 Die Leute sollen sicher sein. Sie sind geflüchtet. 
 
