@@ -16,7 +16,7 @@ sed -e "s/@@FROM@@/$FROM/" Dockerfile.tpl > Dockerfile
 sed -i -e "s/@@PASSWORD@@/$PASSWORD/" Dockerfile
 rm Dockerfile-e 
 
-docker build -t refugees/pc${DEST} .
+docker build -t refugees/pc${DEST} . > /dev/null
 docker run -d -p 1590${DEST}:5900 --name pc${DEST} refugees/pc${DEST}
 docker port pc${DEST}
 
