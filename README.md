@@ -97,12 +97,12 @@ Docker sollte installiert sein. [Docker installieren](https://docs.docker.com/ma
 
 ### Auf geht's
 
-    mkdir ~/git && cd ~/git
-    git clone git@github.com:ruedigerp/refugees-communication-center.git
+		➜  mkdir ~/git && cd ~/git
+		➜  git clone git@github.com:ruedigerp/refugees-communication-center.git
 
 ### Base Image erstellen
 
-    cd ~/git/refugees-communication-center
+		➜  cd ~/git/refugees-communication-center
 		➜  ./rcc -n base -g
 
 ### Service Image erstellen 
@@ -225,10 +225,8 @@ Prepare Script zum Bauen kopieren:
 
 #### Mailclient in englisch
 
-    ➜  
-    cd ~/git/refugees-communication-center/
-    ➜  
-    mkdir icedove-en
+    ➜  cd ~/git/refugees-communication-center/
+    ➜  mkdir icedove-en
 
 Dockerfile erstellen. Inhalt: 
 
@@ -248,17 +246,13 @@ Dockerfile erstellen. Inhalt:
 
 Prepare Script zum Bauen kopieren: 	
 	
-    ➜  
-    cp -av ~/git/refugees-communication-center/base/prepare.sh ~/git/refugees-communication-center/icedove-en
-    ➜  
-    chmod +x ~/git/refugees-communication-center/icedove-en/prepare.sh
+    ➜  cp -av ~/git/refugees-communication-center/base/prepare.sh ~/git/refugees-communication-center/icedove-en
+    ➜  chmod +x ~/git/refugees-communication-center/icedove-en/prepare.sh
 
 #### Mailclient in deutsch 
 
-    ➜  
-    cd ~/git/refugees-communication-center/
-    ➜  
-    mkdir icedove-de
+    ➜  cd ~/git/refugees-communication-center/
+    ➜  mkdir icedove-de
 
 Dockerfile erstellen. Inhalt: 
 
@@ -278,10 +272,8 @@ Dockerfile erstellen. Inhalt:
     
 Prepare Script zum Bauen kopieren: 		
 
-    ➜  
-    cp -av ~/git/refugees-communication-center/base/prepare.sh ~/git/refugees-communication-center/icedove-de
-    ➜  
-    chmod +x ~/git/refugees-communication-center/icedove-de/prepare.sh
+    ➜  cp -av ~/git/refugees-communication-center/base/prepare.sh ~/git/refugees-communication-center/icedove-de
+    ➜  chmod +x ~/git/refugees-communication-center/icedove-de/prepare.sh
 
 ### Mailclient Images für die drei Sprachen erstellen 
 
@@ -314,6 +306,8 @@ Prepare Script zum Bauen kopieren:
 
 ### Maximal 9 Rechner? 
 
-Ja, wer sich die Scripte anguckt, der wird festgestellen es sind aktuell maximal 9 PCs damit möglich. 
-Ja, das mit der Portrange wird noch geändert. 
+~~Ja, wer sich die Scripte anguckt, der wird festgestellen es sind aktuell maximal 9 PCs damit möglich. ~~
+~~Ja, das mit der Portrange wird noch geändert. ~~
+
+Jetzt sind 99 Container möglich.
 
