@@ -172,6 +172,16 @@ wieder gelöscht werden.
 		8129f8494b3e        refugees/pc02       "x11vnc -forever -use"   5 seconds ago        Up 4 seconds        0.0.0.0:15902->5900/tcp   pc02
 		0589fb38ae46        refugees/pc01       "x11vnc -forever -use"   About a minute ago   Up About a minute   0.0.0.0:15901->5900/tcp   pc01
 
+### Liste der Images anzeigen
+
+    ➜  rcc -I
+    Images:
+    icedove-arabic
+    skype
+    pidgin
+    browser
+    icedove-de
+    icedove-en
 
 ### Eigenen Service erstellen
 
