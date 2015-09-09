@@ -68,28 +68,21 @@ Die Service Image enthalten immer die einzelnen Softwarepakete.
     .
     |____base
     | |____Dockerfile
-    | |____prepare.sh
     |____browser
     | |____Dockerfile
-    | |____prepare.sh
     |____final
-    | |____create.sh
-    | |____destroy.sh
-    | |____Dockerfile
     | |____Dockerfile.tpl
-    | |____list.sh
     |____skype
     | |____Dockerfile
-    | |____prepare.sh
 
-Grundsätzlich enthält jeder Order das Dockerfile und das prepare.sh Script. Der Ordner "final" enthält andere Scripte:
+Grundsätzlich enthält jeder Order das Dockerfile. ~~und das prepare.sh Script.~~ Der Ordner "final" enthält andere Scripte:
 
   * Dockerfile.tpl
-  * create.sh
-  * destroy.sh
-  * list.sh
 
-Final erstell das eigentlich Image für den einzelnen User und seinen Container. 
+~~Final erstell das eigentlich Image für den einzelnen User und seinen Container. ~~
+Der Ordner "final" heisst jetzt pc und enthält nur noch das Dockerfile.tpl. 
+Generiert wird jetz auch nur noch über das rcc Script. 
+
 
 ## System aufsetzen. 
 
@@ -280,7 +273,6 @@ Prepare Script zum Bauen kopieren:
     ➜  rcc -n icedove-arabic -g 
     ➜  rcc -n icedove-de -g 
     ➜  rcc -n icedove-en-gb -g 
-    ➜  
     
 ### 3 User PCs mit je einer anderen Spache erstellen
 
@@ -288,15 +280,15 @@ Prepare Script zum Bauen kopieren:
 		438b11d511224a76f7dc6ced7cc521c95cb219432d2e939383d027cd8927ff6b
 		5900/tcp -> 0.0.0.0:15903
 		
-		➜  rcc -i icedove-en -P 4567 -p 4
-		5fcd6a533dd17772e1001e61544a07df470aac3b38107200b45c88f65a03db24
-		5900/tcp -> 0.0.0.0:15904
+    ➜  rcc -i icedove-en -P 4567 -p 4
+    5fcd6a533dd17772e1001e61544a07df470aac3b38107200b45c88f65a03db24
+    5900/tcp -> 0.0.0.0:15904
 
-		➜  rcc -i icedove-arabic -P geheim -p 5
-		78a25000d79707441bdc57f78dfe548870814efea26e4008bc13949aba2c6956
-		5900/tcp -> 0.0.0.0:15905
+    ➜  rcc -i icedove-arabic -P geheim -p 5
+    78a25000d79707441bdc57f78dfe548870814efea26e4008bc13949aba2c6956
+    5900/tcp -> 0.0.0.0:15905
 
-    ➜  rcc -l 
+		➜  rcc -l 
 		78a25000d797        refugees/pc05       "x11vnc -forever -use"   About a minute ago   Up About a minute   0.0.0.0:15905->5900/tcp   pc05
 		5fcd6a533dd1        refugees/pc04       "x11vnc -forever -use"   About a minute ago   Up About a minute   0.0.0.0:15904->5900/tcp   pc04
 		438b11d51122        refugees/pc03       "x11vnc -forever -use"   About a minute ago   Up About a minute   0.0.0.0:15903->5900/tcp   pc03
