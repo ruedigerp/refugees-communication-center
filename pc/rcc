@@ -1,0 +1,107 @@
+#!/bin/bash
+
+while getopts "i:P:p:n:D:gIhld" optname
+  do
+    case "$optname" in
+      "I")
+				echo "Images: "
+				docker images | grep refugees | egrep -v "pc|base" | awk {'print $1'} | awk -F"/" {'print $2'}
+				exit 0;
+        ;;
+      "p")
+        # echo "Option $optname has value $OPTARG"
+        DEST=$OPTARG
+        ;;
+      "P")
+        # echo "Option $optname has value $OPTARG"
+        PASSWORD=$OPTARG
+        ;;
+      "i")
+        # echo "Option $optname has value $OPTARG"
+        FROM=$OPTARG
+        ;;
+			"l")
+				docker ps | grep "refugees/pc"
+				exit;
+				;;
+			"d")
+				echo "Dest $DEST" 
+				re='^[0-9]+$'
+				size=${#DEST}
+				if [[ $DEST -gt 2 ]] ; then
+					echo "error: number is to big (max 99)" >&2; exit 1
+				fi
+				if ! [[ $DEST =~ $re ]] ; then
+				   echo "error: Not a number" >&2; exit 2
+				fi
+				DEST=`printf %02d ${DEST%.*}`
+				DEST=`printf %02d ${DEST%.*}`
+				docker stop pc$DEST
+				docker rm pc$DEST
+				docker rmi refugees/pc$DEST
+				exit;
+				;;
+      "n")
+				IMAGENAME="$OPTARG"
+        ;;
+      "g")
+				cd ../$IMAGENAME
+				docker build -t refugees/$IMAGENAME .
+				exit;
+        ;;
+      "D")
+				docker rmi refugees/$OPTARG 
+				exit;
+        ;;
+      "?")
+        echo "Unknown option $OPTARG"
+        exit 1
+        ;;
+      ":")
+        echo "No argument value for option $OPTARG"
+        exit 1
+        ;;
+      *)
+      # Should not occur
+        echo "Unknown error while processing options"
+        exit 1
+        ;;
+    esac
+    # echo "OPTIND is now $OPTIND"
+  done
+if [[ $# -lt 3 ]]; then
+	echo "not enough parameters"
+	exit;
+fi
+ok=0
+for images in $(docker images | grep refugees | egrep -v "pc|base" | awk {'print $1'} | awk -F"/" {'print $2'}); do 
+	if [[ $images == $FROM ]]; then 
+		ok=1
+	fi
+done
+if [[ $ok -ne 1 ]]; then 
+	echo "Image nicht vorhanden"
+	exit; 
+fi
+
+
+re='^[0-9]+$'
+size=${#DEST}
+if [[ $DEST -gt 2 ]] ; then
+	echo "error: number is to big (max 99)" >&2; exit 1
+fi
+if ! [[ $DEST =~ $re ]] ; then
+   echo "error: Not a number" >&2; exit 2
+fi
+
+DEST=`printf %02d ${DEST%.*}`
+
+sed -e "s/@@FROM@@/$FROM/" Dockerfile.tpl > Dockerfile
+sed -i -e "s/@@PASSWORD@@/$PASSWORD/" Dockerfile
+rm Dockerfile-e 
+
+docker build -t refugees/pc${DEST} . > /dev/null
+docker run -d -p 159${DEST}:5900 --name pc${DEST} refugees/pc${DEST}
+docker port pc${DEST}
+rm Dockerfile
+
