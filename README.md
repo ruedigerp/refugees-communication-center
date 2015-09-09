@@ -75,11 +75,11 @@ Die Service Image enthalten immer die einzelnen Softwarepakete.
     |____skype
     | |____Dockerfile
 
-Grundsätzlich enthält jeder Order das Dockerfile. ~~und das prepare.sh Script.~~ Der Ordner "final" enthält andere Scripte:
+Grundsätzlich enthält jeder Order das Dockerfile. ~~und das prepare.sh Script.~~ Der Ordner ~~"final"~~ "pc" enthält andere Scripte:
 
   * Dockerfile.tpl
 
-~~Final erstell das eigentlich Image für den einzelnen User und seinen Container. ~~
+~~Final erstell das eigentlich Image für den einzelnen User und seinen Container.~~
 Der Ordner "final" heisst jetzt pc und enthält nur noch das Dockerfile.tpl. 
 Generiert wird jetz auch nur noch über das rcc Script. 
 
