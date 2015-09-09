@@ -306,8 +306,8 @@ Prepare Script zum Bauen kopieren:
 
 ### Maximal 9 Rechner? 
 
-~~Ja, wer sich die Scripte anguckt, der wird festgestellen es sind aktuell maximal 9 PCs damit möglich. ~~
-~~Ja, das mit der Portrange wird noch geändert. ~~
+~~Ja, wer sich die Scripte anguckt, der wird festgestellen es sind aktuell maximal 9 PCs damit möglich.~~
+<s>Ja, das mit der Portrange wird noch geändert.</s>
 
 Jetzt sind 99 Container möglich.
 
