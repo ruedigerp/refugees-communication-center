@@ -53,6 +53,16 @@ while getopts "i:P:p:n:D:gIhld" optname
 				docker rmi refugees/$OPTARG 
 				exit;
         ;;
+			"h")
+				echo "Usage:"
+				echo "	rcc -l                                  <- List container"
+				echo "	rcc -I                                  <- List images"
+				echo "	rcc -i imagename -P Password -p PC-ID   <- Container erstellen"
+				echo "	rcc -p PC-ID -d                         <- Container löschen"
+				echo "	rcc -n imagename -g                     <- Image erstellen"
+				echo "	rcc -D imagename                        <- Image löschen "
+				exit;
+				;;
       "?")
         echo "Unknown option $OPTARG"
         exit 1

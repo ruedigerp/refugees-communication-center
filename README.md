@@ -72,7 +72,7 @@ Die Service Image enthalten immer die einzelnen Softwarepakete.
     | |____Dockerfile
     |____final
     | |____Dockerfile.tpl
-    |____skype
+    |____icedove-de
     | |____Dockerfile
 
 Grundsätzlich enthält jeder Order das Dockerfile. ~~und das prepare.sh Script.~~ Der Ordner ~~"final"~~ "pc" enthält andere Scripte:
@@ -108,7 +108,7 @@ und/oder
 
 Das Image für Skype erstellen 
 
-		➜  ./rcc -n skype -g
+		➜  ./rcc -n icedove-de -g
      
 usw. Jetzt sind alle Service Images erstellt und die Image für einzelne PCs und Benutzer können erstellt werden. 
 Weitere Service erstellen wird weiter unten noch beschrieben. Beispiel ist dabei der Mailclient Icedove in mehreren 
@@ -118,7 +118,7 @@ Sprachen.
 
 #### PC1
 
-		➜  ./rcc -i skype -P test -p 1
+		➜  ./rcc -i icedove-de -P test -p 1
 		6ede50fe1f84a0434b37ff3c037a7b947e7c887905d6e7140014cc5a803f6589
 		5900/tcp -> 0.0.0.0:15901
 
@@ -177,7 +177,6 @@ wieder gelöscht werden.
     ➜  rcc -I
     Images:
     icedove-arabic
-    skype
     pidgin
     browser
     icedove-de
